@@ -1,79 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Inkluderer en stilark for normalisering for å sikre at nettstedet ser likt ut på alle nettlesere -->
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" type="text/css">
-    <!-- Inkluderer ikon-stiler for ikoner fra FontAwesome -->
-    <link href="css/font/css/fontawesome.css" rel="stylesheet">
-    <link href="css/font/css/brands.css" rel="stylesheet">
-    <link href="css/font/css/solid.css" rel="stylesheet">
-    <!-- Inkluderer nettstedets egen stilark -->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>Bolleoppskrifter</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Company About" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://placehold.co/400x400" />
+        <meta property="og:description" content="Read About Company." />
+        <meta name="description" content="You can read a lot about company.">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="icon" type="image/x-icon" href="img/boom.png">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" type="text/css">
+        <link href="css/font/fontawesome-free-6.4.2-web/css/fontawesome.css" rel="stylesheet">
+        <link href="css/font/fontawesome-free-6.4.2-web/css/brands.css" rel="stylesheet">
+        <link href="css/font/fontawesome-free-6.4.2-web/css/solid.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <title>Company About</title>
+        <!--JsonLD media querries-->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Halden Norway",
+                "postalCode": "1757",
+                "streetAddress": "B R A Veien 4"
+              },
+              "email": "postmottak@hiof.no",
+              "member": [
+                {
+                  "@type": "Organization"
+                },
+                {
+                  "@type": "Organization"
+                }
+              ],
+              "alumni": [
+                {
+                  "@type": "Person",
+                  "name": "Name Example"
+                },
+                {
+                  "@type": "Person",
+                  "name": "John Smith"
+                }
+              ],
+              "name": "Company Name",
+              "telephone": "(47) 69 60 80 00"
+            }
+            </script>
+    </head>
 <body>
+    <!--Dette er back to top button-->
+    <a href="#top" id="back-to-top" title="Back to the top of website" aria-label="Back to top">Back to top</a>
+    <!--Dette er script fra chat gpt for back to top button-->
+    <script>
+        var backToTopButton = document.getElementById('back-to-top');
+        </script>
+    <script> function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      </script>
+    <script>window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          backToTopButton.style.visibility = 'visible';
+          backToTopButton.style.opacity = '1';
+        } else {
+          backToTopButton.style.opacity = '0';
+          backToTopButton.style.visibility = 'hidden';
+        }
+      });</script>
     <!-- Hovedbeholderen for nettstedet -->
     <div id="grid-container">
-        <header>
+        <header id="top" itemscope itemtype="http://schema.org/AboutPage">
             <nav>
-                <a href="#" id="logo">Logo</a>
-                <div>
-                    <!-- Ikon for søkefunksjonen -->
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <!-- Ikon for navigasjonsmenyen på små skjermer -->
-                    <i id="ham" class="fa-solid fa-bars"></i>
-                </div>
+                <a href="index.html" class="logo" title="Company Logo"><img src="img/logo1.png" alt="logo" title="CompanyLogo"></a>
                 <ul class="navbar">
-                    <!-- Navigasjonsmeny med lenker -->
-                    <li><a href="#">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <!--Dette er innhold, ikke pynt-->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Portfolio</a></li>
+                    <li class="selected"><a href="about.html">About</a></li>
+                    <li class="contact"><a href="about.html#contact-container">Contact</a></li>
                 </ul>
             </nav>
-            
-            <section>
-                <h1>Bolleoppskrifter</h1>
-                <!-- Knapp for å lese mer (for eksempel om bolleoppskrifter) -->
-                <a href="#" class="black-btn">Read more</a>
+            <section tabindex="0" title="image section" class="aboutsite">
+                <!-- Bildet fra https://wallpaperswide.com/apple_iphone_13-wallpapers.html -->
+                <img tabindex="0" src="img/apple_iphone_13-wallpaper-3440x1440.jpg" alt="iphone photo">
+                <article class="section-contentabout">
+                    <h1 tabindex="0" itemprop="name">Company Name</h1>
+                    <h2 tabindex="0">About Our Company</h2>
+                    <p tabindex="0" itemprop="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <a href="#contact-container" class="read-more-button" title="button" aria-label="Skip to contact section">Get in touch with us</a>
+                </article>
             </section>
         </header>
         <main>
-            <!-- Seksjon 1 med en overskrift og en beskrivelse -->
-            <section class="flex-section">
-                <img src="https://placehold.co/600x400" alt="Grå placeholder bilde">
-                <section>
-                    <h2>Lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu</p>
-                </section>    
+            <!--Dette er innhold, ikke pynt-->
+            <h2 tabindex="0" id="our-services">Our Services</h2>
+            <section id="brandingsection">
+                <article class="branding2">
+                    <!--Dette er innhold, ikke pynt-->
+                    <i id="icon1" class="fa-solid fa-users"></i>
+                    <h4 tabindex="0">Branding</h4>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </article>
+                <article class="branding2">
+                    <!--Dette er innhold, ikke pynt-->
+                    <i id="icon2" class="fa-solid fa-cloud-arrow-up"></i>
+                    <h4 tabindex="0">Branding</h4>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </article>
+                <article class="branding2">
+                    <!--Dette er innhold, ikke pynt-->
+                    <i id="icon3" class="fa-solid fa-code"></i>
+                    <h4 tabindex="0">Branding</h4>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </article>
+                <article class="branding2">
+                    <!--Dette er innhold, ikke pynt-->
+                    <i id="icon4" class="fa-solid fa-wifi"></i>
+                    <h4 tabindex="0">Branding</h4>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </article>
             </section>
-            <!-- Seksjon 2 med en overskrift og en beskrivelse (denne er høyrejustert) -->
-            <section class="flex-section right">
-                <img src="https://placehold.co/600x400" alt="Grå placeholder bilde">
-                <section>
-                    <h2>Lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu</p>
+            <section class="clients-section">
+                <!--Dette er innhold, ikke pynt-->
+                <h5 tabindex="0">Some of our clients</h5>
+                <article class="logos">
+                    <img tabindex="0" src="img/logo1.png" alt="Client Logo 1" class="logo">
+                    <img tabindex="0" src="img/logo2.png" alt="Client Logo 2" class="logo">
+                    <img tabindex="0" src="img/logo3.png" alt="Client Logo 3" class="logo">
+               </article>
+            </section>
+            <section id="contact-container">
+                <section class="form-container">
+                    <!--Dette er innhold, ikke pynt-->
+                    <h6 tabindex="0">Send us a message</h6>
+                    <form>
+                        <label aria-label="input name here" for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Ola Nordmann..">
+            
+                        <label aria-label="input subject here" for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Branding..">
+            
+                        <label aria-label="input message here" for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message.."></textarea>
+            
+                        <button class="read-more-button-us" type="submit" aria-label="Click to send message">Send message</button>
+                    </form>
+                </section>
+                <section class="info-container">
+                    <!--Dette er innhold, ikke pynt-->
+                    <h6 tabindex="0">Contact information</h6>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <article class="contact-us-container">
+                        <span class="griditem"><i class="fa-solid fa-location-pin"></i></span>
+                        <p tabindex="0" title="Adress" class="griditem" aria-label="Adress of the Company">B R A Veien 4, 1757 Halden</p>
+                        <span class="griditem"><i class="fa-solid fa-phone"></i></span>
+                        <p tabindex="0" title="Phone number" aria-label="Phone number to the company" class="griditem">69 60 80 00</p>
+                        <span class="griditem"><i class="fa-solid fa-envelope"></i></span>
+                        <p tabindex="0" title="Email" aria-label="The electronic mail adress to the comapny" class="griditem">postmottak@hiof.no</p>    
+                    </article>
                 </section>
             </section>
-            <!-- Seksjon 3 for tjenester med flere artikler -->
-            <section id="services">
-                <h2>Services</h2>
-                <article>
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                </article>
-                <article>
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                </article>
-                <article>
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                </article>
-            </section>
+            <iframe tabindex="0" title="Map" aria-label=" Google Map with company adress" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2047.1884410668033!2d11.350223013272359!3d59.12924747441174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464412f0d344246f%3A0x4e47f19c99b253b1!2s%C3%98stfold%20University%20College!5e0!3m2!1sen!2sno!4v1700823988291!5m2!1sen!2sno" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </main>
         <footer>
+            <!--Dette er innhold, ikke pynt-->
+            <a href="index.html" class="logo" title="Company Logo"><img src="img/logo1.png" alt="logo" title="CompanyLogo"></a>
+            <p tabindex="0" class="footertext">Copyrights Companyname 2023</p>
+            <span class="footericons">
+                <a title="facebook logo" aria-label="Our facebook" href="https://www.facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
+                <a title="Instagram logo" aria-label="Our instagram" href="https://www.instagram.com"><i class="fa-brands fa-square-instagram"></i></a>
+                <a title="Linkedin logo" aria-label="Our linked in" href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+            </span>
         </footer>
     </div>
 </body>

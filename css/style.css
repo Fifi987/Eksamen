@@ -1,64 +1,307 @@
-/* Setter standard skrifttype for hele nettsiden */
-body {
-    font-family: Arial, Helvetica, sans-serif;
+html{
+    display: flex;
+    justify-content: center;
+    scroll-behavior: smooth;
 }
 
-/* Definerer et grid-container som inneholder header, main og footer */
+body {
+    font-family: 'Poppins', serif;
+    max-width: 1600px;
+}
+
+
 #grid-container {
     display: grid;
     grid-template-areas: "header" "main" "footer";
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* Legger til litt padding til header, main og footer for mellomrom */
-header, main, footer {
+#back-to-top {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    padding: 10px 15px; 
+    background-color: #e6bd43; 
+    color: rgb(0, 0, 0); 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.5s ease, visibility 0.5s ease; 
+    z-index: 1000; 
+    text-decoration: none;
+  }
+  
+  #back-to-top:hover {
+    background-color: rgb(0, 0, 0); 
+    color: #ccc;
+  }
+
+
+header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    grid-area: header;
+    grid-column: span 3;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    gap: 3rem;
+    list-style: none;
     padding: 1rem;
 }
 
-/* Styler header-seksjonen */
-header {
-    font-size: 1.5rem;
-    font-weight: 600;
-    grid-area: header;
-}
-
-/* Gjør navigasjonselementene i header til flexbokser som er justert mellomrom og til høyre */
-header nav {
+header nav{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 3rem;
+    list-style:none;
+    min-height: 0;
+}
+
+.video-section {
     position: relative;
+    width: 100%;
+    height: 500px; 
+    overflow: hidden;
 }
 
-/* Gjør logo-lenken uten understrek */
-#logo {
-    text-decoration: none;
+.video-section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: opacity(50%);
 }
 
-/* Skjuler standard navigasjonsmeny */
-.navbar {
+.video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: opacity(50%);
+}
+
+.video-sectionmobile{
     display: none;
 }
 
-/* Styler responsiv navigasjonsmeny */
-.responsive {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background-color: #242424;
-    margin: 0;
-    padding: 0;
-    top: 40px;
-    width: 100%;
-    list-style: none;
-}
-
-.responsive a {
-    color: #fff;
-    display: inline-block;
+.logo{
     padding: 1rem;
-    text-decoration: none;
+
 }
 
-/* Styler en svart knapp */
+.section-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.aboutsite {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.aboutsite h1, p {
+    font-size: large;
+    font-weight: 300;
+}
+
+.aboutsite h2 {
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.aboutsite img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: opacity(100%);
+}
+
+.section-contentabout{
+    padding: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    flex-grow: 1;
+    position:relative;
+    text-align: left;
+    z-index: 10;
+    background-color: #F3F3F3;
+    max-width: 800px;
+    min-width: 300px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.section-contentabout a{
+    display: flex;
+    align-self: flex-start;
+    font-size: large;
+    font-weight: 300;
+}
+
+
+#portfoliotext{
+    font-size: 50px;
+}
+
+.size{
+    max-width: 692px;
+    min-width: 200px;
+    margin: 2rem;
+    flex-grow: 1;
+    transition: transform 0.3s ease;
+}
+
+.size1{
+    max-width: 692px;
+    min-width: 200px;
+    margin: 2rem;
+    flex-grow: 1;
+    transition: transform 0.3s ease;
+}
+
+.size:hover{
+    transform: scale(1.05);
+}
+
+#design{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+#branding{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#devolopment{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.textportfolio {
+    font-size: 40px;               
+    text-decoration: none;         
+    position: relative;          
+    display: inline-block;         
+    padding: 2rem;
+}
+
+.yellowlinecontainer {
+    width: 100%;               
+    position: relative;        
+}
+
+.yellowlinecontainer::after {
+    margin: 2rem;
+    content: '';               
+    position: absolute;       
+    bottom: 0px;             
+    left: 0;                   
+    width: 96%;               
+    height: 3px;               
+    background-color: #e6bd43;  
+}
+.outline-button {
+    padding: 10px 20px;
+    border: 2px solid black; 
+    color: black; 
+    background-color: transparent; 
+    text-decoration: none; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+    max-width: fit-content;
+}
+
+.outline-button:hover {
+    background-color: black; 
+    color: #e6bd43; 
+}
+
+
+.section-content h1 {
+    font-size: 3rem;
+    color: #171717;
+}
+
+.section-content p {
+    font-size: 1.5rem;
+    color: black;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: gray; 
+}
+
+nav ul li.selected a {
+    color: black;
+    border-bottom: 2px solid #e6bd43; 
+}
+
+nav ul li.contact a {
+    background-color: #e6bd43; 
+    color: black; 
+    padding: 1rem; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+nav ul li.contact a:hover {
+    background-color: black; 
+    color: #e6bd43; 
+}
+
+.read-more-button {
+    background-color: #e6bd43; 
+    color: black; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border: none; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.read-more-button:hover {
+    background-color: black; 
+    color: #e6bd43; 
+}
+
+
+.navbar li {
+    margin-left: 20px;
+}
+
+
 .black-btn {
     display: inline-block;
     padding: 1rem;
@@ -69,84 +312,714 @@ header nav {
     font-weight: 400;
 }
 
-/* Styler main-seksjonen i gridet */
+
 main {
     grid-area: main;
+    grid-column: span 3;
 }
 
-/* Setter bredden til bilder inni main-seksjonen til 100% */
+
 main section img {
     width: 100%;
 }
 
-/* Styler footer-seksjonen i gridet */
 footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     grid-area: footer;
+    grid-column: span 3;
+    background-color: #252525;
 }
 
-/* Styler tjeneste-seksjonen med flexbokser og bakgrunnsfarge */
-#services {
+.footertext{
+    padding-left: 0rem;
+    color: gray;
+}
+
+.footertext2{
+    padding-left: 0rem;
+    color: gray;
+}
+
+.footericons{
+    display: flex;
+    color: #fff;
+    gap: 3rem;
+    font-size:30px;
+    margin: 1rem;
+    
+
+}
+
+.footericons a{
+    color: #fff;
+    
+    
+
+}
+
+.footericons2 {
+    display: flex;
+    color: #fff;
+    gap: 3rem;
+    font-size:30px;
+    margin: 1rem;
+}
+
+.footericons2 a{
+    color: #fff;
+}
+
+
+.h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.h2 p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.imageplaceholder{
+    max-width: 400px;
+    max-height: 400px;
+    padding: 2rem;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background-color: #e6bd43;
+    height: 800px;
+    gap: 3rem;
+}
+
+.about-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 600px;
+    gap: 2rem;
+}
+
+.read-more-button-us {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid black; 
+    color: black; 
+    text-decoration: none; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.read-more-button-us:hover {
+    background-color: black; 
+    color: #e6bd43; 
+}
+#our-services{
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+    padding: 5rem;
+}
+
+#newsletter1{
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+}
+
+iframe{
+    width: 100%;
+}
+
+#brandingsection{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    background-color: #efefef;
-    padding: 1rem;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    gap: 2rem;
+    margin: 2rem;
 }
 
-#services h2 {
-    width: 100%;
+.branding2{
+    display: grid;
+    justify-items: center;
     text-align: center;
 }
 
-#services article {
-    max-width: 300px;
-    width: 100%;
-    min-width: 200px;
+#icon1{
+    scale: 2;
+}
+#icon2{
+    scale: 2;
+}
+#icon3{
+    scale: 2;
+}
+#icon4{
+    scale: 2;
 }
 
-/* Mediestørrelsesregel for skjermer som er bredere enn 600px */
-@media only screen and (min-width: 600px) {
-    /* Endrer grid-malen for bredere skjermer */
+.newsletter{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E4E4E4;
+    height: 300px;
+    gap: 1rem;
+}
+
+.newsletter-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px; 
+    max-width: 400px; 
+    margin: auto; 
+    justify-content: center;
+}
+
+.newsletter-signup input[type="email"] {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; 
+    border: none; 
+    padding: 10px; 
+    margin-right: 10px; 
+    border-radius: 4px; 
+    background-color: #F3F3F3;
+    color: #333; 
+}
+
+.newsletter-signup input[type="email"]::placeholder {
+    color: #333; 
+
+}
+
+.newsletter-signup button {
+    display: flex;
+    padding: 15px 30px; 
+    background-color: #e6bd43; 
+    color: white; 
+    border: none; 
+    border-radius: 1px; 
+    cursor: pointer; 
+    white-space: nowrap;
+}
+
+.newsletter-signup button:hover {
+    background-color: black; 
+    color: #e6bd43;
+}
+
+.newsletter-signup input[type="email"]:focus {
+    outline: none;
+}
+
+.clients-section{
+    text-align: center;
+    background-color: #e6bd43;
+    padding-bottom: 4rem;
+}
+
+.clients-section h5 {
+    font-size: 50px;
+    padding-top: 4rem;
+    margin-bottom: 4rem; 
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    justify-self: center;
+    align-items: center;
+}
+
+.logos img{
+    max-width: 200px;
+}
+
+#contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+}
+
+.form-container, .info-container {
+    margin: 0 20px; 
+}
+
+h6 {
+    color: black; 
+    font-size: 20px;
+}
+
+form {
+    max-width: 400px; 
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+}
+
+.read-more-button-us {
+    background-color: #e6bd43; 
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.read-more-button-us:hover {
+    background-color: #0c0c0c; 
+    color: #e6bd43;
+}
+
+.info-container {
+    max-width: 400px; 
+}
+
+.info-container p {
+    margin-bottom: 10px;
+}
+
+.contact-us-container{
+    display: grid;
+    grid-template-columns: 30px auto;
+    padding: 10px;
+    align-items: center;
+}
+
+
+  
+@media only screen and (max-width: 720px){
     #grid-container {
-        grid-template-areas: "header header header" "main main main" "footer footer footer";
+        display: grid;
+        grid-template-areas: "header" "main" "footer";
+        grid-template-columns: repeat(1, minmax(0, 1fr));   
     }
 
-    /* Viser den skjulte navigasjonsmenyen og skjuler menyikoner */
+    footer {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        grid-area: footer;
+        grid-column: span 1;
+        background-color: #252525;
+        text-align: center;
+    }
+
+    main {
+        grid-area: main;
+        grid-column: span 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        font-weight: 600;
+        grid-area: header;
+        grid-column: span 1;
+        align-items: center;
+    }
+
+    header nav{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        list-style:none;
+        min-height: 0;
+    }
+
     .navbar {
         display: flex;
-        flex-direction: row;
-        gap: 1rem;
+        flex-direction: column;
+        align-self: center;
+        gap: 3rem;
         list-style: none;
-        margin: 0;
+        padding: 1rem;
+        text-align: center;
+
     }
 
-    /* Skjuler menyikoner i header */
-    #ham, .fa-magnifying-glass {
+    .footericons {
+        display: flex;
+        flex-direction: row;
+        color: #fff;
+        gap: 3rem;
+        font-size: 30px;
+        padding-right: 0px;
+    }
+
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        gap: 2rem;
+        padding: -1rem;
+        align-items: center;
+        text-align: center;
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #e6bd43;
+        height: 1000px;
+        gap: 3rem;
+    }
+
+    #brandingsection {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 2rem;
+        margin: 2rem;
+    }
+
+    p{
+        max-width: fit-content;
+    }
+
+    .footertext {
+        padding-left: 0px;
+        color: gray;
+    }
+
+    .h2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        text-align: center;
+        font-size: 16px;
+        max-width: fit-content;
+    }
+
+    .h2 p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    .imageplaceholder {
+        max-width: 400px;
+        max-height: 400px;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .newsletter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #E4E4E4;
+        height: 200px;
+        gap: 1rem;
+    }
+
+    #newsletter1 {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+    }
+
+    .newsletter-signup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1px;
+        width: 30vw;
+        margin: auto;
+        justify-content: center;
+        flex-shrink: inherit;
+        padding-bottom: auto;
+    }
+
+    .newsletter-signup button {
+        display: flex;
+        padding: 15px 30px;
+        background-color: #e6bd43;
+        color: white;
+        border: none;
+        border-radius: 1px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .newsletter-signup input[type="email"] {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        border: none;
+        padding: 10px;
+        margin-right: 0px;
+        border-radius: 4px;
+        background-color: #F3F3F3;
+        color: #333;
+        width: 130px;
+    }
+
+    #our-services {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        padding: 0rem;
+    }
+
+    .navbar li {
+        margin-left: 0px;
+    }
+
+    .video-section{
         display: none;
     }
 
-    /* Gjør flex-seksjoner som viser bilder og tekst ved siden av hverandre med mellomrom */
-    .flex-section {
+    .video-sectionmobile{
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        height: 500px; 
+        overflow: hidden;
     }
 
-    /* Reduserer bildenes bredde til 50% i flex-seksjoner */
-    .flex-section img {
-        width: 50%;
+    .video-sectionmobile img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: opacity(50%);
     }
 
-    /* Legger til litt mellomrom og justering i flex-seksjoner */
-    .flex-section section {
-        padding: 1rem;
-        width: 40%;
+    .read-more-button {
+        background-color: #e6bd43;
+        color: black;
+        padding: 5px 10px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .textportfolio {
+        font-size: 20px;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        padding: 0rem;
+    }
+
+    .yellowlinecontainer::after {
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 96%;
+        height: 3px;
+        background-color: #e6bd43;
+    }
+
+    .size {
+        max-width: 692px;
+        min-width: 200px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        flex-grow: 1;
+    }
+
+    .section-contentabout {
+        margin-right: 2rem;
+        margin-left: 2rem;
+        display: flex;
         align-self: center;
+        flex-direction: column;
+        flex-grow: 1;
+        position: relative;
+        text-align: left;
+        z-index: 10;
+        background-color: #F3F3F3;
+        max-width: 800px;
+        min-width: 250px;
+        height: 400px;
+        background-color: rgba(255, 255, 255, 0.5);
     }
 
-    /* Endrer rekkefølgen av bilde og tekst i høyrejusterte seksjoner */
-    .right img {
-        order: 1;
+    .logos {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3rem;
+        justify-self: center;
+        align-items: center;
     }
+
+    #contact-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .aboutsite h2 {
+        font-size: large;
+        font-weight: 600;
+    }
+    
+    .aboutsite h1, p {
+        font-size:small;
+        font-weight: 300;
+    }
+
+    .aboutsite {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    #newsletter1 {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .size1 {
+        max-width: 692px;
+        min-width: 200px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footertext2{
+        display: none;
+    }
+
+    .footericons2{
+        display: none;
+    }
+
 }
+
+@media (hover: none) and (pointer: coarse) {
+    .read-more-button-us:hover {
+    
+        background-color: #e6bd43; 
+        color: rgb(0, 0, 0);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+
+    }
+
+    .outline-button:hover{
+        padding: 10px 20px;
+        border: 2px solid black;
+        color: black; 
+        background-color: transparent; 
+        text-decoration: none; 
+        font-size: 16px; 
+        cursor: pointer; 
+        transition: background-color 0.3s, color 0.3s; 
+        max-width: fit-content;
+        
+        
+    }
+
+    .newsletter-signup button:hover {
+        display: flex;
+        padding: 15px 30px; 
+        background-color: #e6bd43; 
+        color: white; 
+        border: none; 
+        border-radius: 1px; 
+        cursor: pointer; 
+        white-space: nowrap; 
+    }
+
+    .read-more-button:hover {
+        background-color: black; 
+        color: #e6bd43; 
+    }
+
+    nav ul li.contact a:hover {
+        background-color: black;
+        color: #e6bd43; 
+    }
+
+    .size:hover{
+        transform: scale(1.05);
+    }
+
+    #back-to-top:hover {
+        background-color: rgb(0, 0, 0); 
+        color: #ccc;
+    }
+    
+}
+

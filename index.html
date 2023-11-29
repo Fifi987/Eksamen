@@ -1,80 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Inkluderer en stilark for normalisering for å sikre at nettstedet ser likt ut på alle nettlesere -->
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" type="text/css">
-    <!-- Inkluderer ikon-stiler for ikoner fra FontAwesome -->
-    <link href="css/font/css/fontawesome.css" rel="stylesheet">
-    <link href="css/font/css/brands.css" rel="stylesheet">
-    <link href="css/font/css/solid.css" rel="stylesheet">
-    <!-- Inkluderer nettstedets egen stilark -->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>Bolleoppskrifter</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Company Home" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://placehold.co/400x400" />
+        <meta property="og:description" content="Home site for Company" />
+        <meta name="description" content="This is the home site for the company">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" type="text/css">
+        <link rel="icon" type="image/x-icon" href="img/boom.png">
+        <link href="css/font/fontawesome-free-6.4.2-web/css/fontawesome.css" rel="stylesheet">
+        <link href="css/font/fontawesome-free-6.4.2-web/css/brands.css" rel="stylesheet">
+        <link href="css/font/fontawesome-free-6.4.2-web/css/solid.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <title>Company Home</title>
+    </head>
 <body>
-    <!-- Hovedbeholderen for nettstedet -->
-    <div id="grid-container">
-        <header>
+    <div itemscope itemtype="http://schema.org/Organization" id="grid-container">
+        <!--Microdata-->
+        <meta itemprop="name" content="Company Name">
+        <link itemprop="url" href="index.html">
+        <header id="top">
             <nav>
-                <a href="#" id="logo">Logo</a>
-                <div>
-                    <!-- Ikon for søkefunksjonen -->
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <!-- Ikon for navigasjonsmenyen på små skjermer -->
-                    <i id="ham" class="fa-solid fa-bars"></i>
-                </div>
+                <!--Dette er innhold, ikke pynt-->
+                <a href="index.html" class="logo" itemprop="logo" title="Company Logo"><img src="img/logo1.png" alt="Company Logo"></a>
                 <ul class="navbar">
-                    <!-- Navigasjonsmeny med lenker -->
-                    <li><a href="#">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li class="selected"><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="contact"><a href="about.html#contact-container">Contact</a></li>
                 </ul>
             </nav>
-            
-            <section>
-                <h1>Bolleoppskrifter</h1>
-                <!-- Knapp for å lese mer (for eksempel om bolleoppskrifter) -->
-                <a href="#" class="black-btn">Read more</a>
+            <!-- Hovedbeholderen for nettstedet -->
+            <div title="video section" tabindex="0" class="video-section">
+                <video autoplay loop muted>
+                    <source src="img/mountains.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <div class="section-content">
+                    <!--Dette er innhold, ikke pynt-->
+                    <h1 tabindex="0">Your Section Heading</h1>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                    <a href="#brandingsection" class="read-more-button" title="Read more about our services">Read More About Our Services</a>
+                </div>
+            </div>
+            <section title="video section" tabindex="0" class="video-sectionmobile">
+                <!-- Bildet fra https://wallpaperswide.com/apple_iphone_13-wallpapers.html -->
+                <img tabindex="0" src="img/apple_iphone_13-wallpaper-3440x1440.jpg" alt="iphone photo">
+                <section class="section-content">
+                    <!--Dette er innhold, ikke pynt-->
+                    <h1 tabindex="0">Your Section Heading</h1>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                    <a href="#brandingsection" class="read-more-button" title="Read more about our services">Read More About Our Services</a>
+                </section>
             </section>
         </header>
         <main>
-            <!-- Seksjon 1 med en overskrift og en beskrivelse -->
-            <section class="flex-section">
-                <img src="https://placehold.co/600x400" alt="Grå placeholder bilde">
-                <section>
-                    <h2>Lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu</p>
-                </section>    
-            </section>
-            <!-- Seksjon 2 med en overskrift og en beskrivelse (denne er høyrejustert) -->
-            <section class="flex-section right">
-                <img src="https://placehold.co/600x400" alt="Grå placeholder bilde">
-                <section>
-                    <h2>Lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu</p>
-                </section>
-            </section>
-            <!-- Seksjon 3 for tjenester med flere artikler -->
-            <section id="services">
-                <h2>Services</h2>
-                <article>
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                </article>
-                <article>
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                </article>
-                <article>
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            <section class="h2">    
+                <article class="h2">
+                    <!--Dette er innhold, ikke pynt-->
+                    <h2 tabindex="0">Engaging subheading. What can you help your visitors with.</h2>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p> 
                 </article>
             </section>
+            <section class="about">
+                <!--Dette er innhold, ikke pynt-->
+                <img tabindex="0" class="imageplaceholder" height="400" width="400" src="https://placehold.co/400x400" alt="placeholder picture">
+                <article class="about-text">
+                    <h2 tabindex="0">About Our Company</h2>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <a href="about.html#contact-container" class="outline-button" title="Read more about us">Read More About Us</a>
+                </article>
+            </section>
+            <!--Dette er innhold, ikke pynt-->
+            <h2 id="our-services" tabindex="0">Our Services</h2>
+            <section id="brandingsection">
+                <article class="branding2">
+                    <!--Dette er innhold, ikke pynt-->
+                    <i id="icon1" class="fa-solid fa-users"></i>
+                    <h4 tabindex="0">Branding</h4>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                </article>
+                <article class="branding2">
+                    <!--Dette er innhold, ikke pynt-->
+                    <i id="icon2" class="fa-solid fa-cloud-arrow-up"></i>
+                    <h4 tabindex="0">Branding</h4>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                </article>
+                <article class="branding2">
+                    <!--Dette er innhold, ikke pynt-->
+                    <i id="icon3" class="fa-solid fa-code"></i>
+                    <h4 tabindex="0">Branding</h4>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                </article>
+                <article class="branding2">
+                    <!--Dette er innhold, ikke pynt-->
+                    <i id="icon4" class="fa-solid fa-wifi"></i>
+                    <h4 tabindex="0">Branding</h4>
+                    <p tabindex="0">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                </article>
+            </section>
+            <section class="newsletter">
+                <!--Dette er innhold, ikke pynt-->
+                <h2 id="newsletter1" tabindex="0">Sign Up For Our Newsletter</h2>
+                <div class="newsletter-signup">
+                    <!--Dette er innhold og pynt-->
+                    <input tabindex="0" title="Enter email" type="email" id="email" name="email" placeholder="Enter your email" aria-label="Enter email for newsletter">
+                    <button tabindex="0" type="submit">Sign Up</button>
+                </div>
+            </section>                
         </main>
         <footer>
+            <!--Dette er innhold, ikke pynt-->
+            <a href="index.html" class="logo" title="Company Logo"><img src="img/logo1.png" alt="Company Logo"></a>
+            <p class="footertext2" tabindex="0">Copyrights Companyname 2023</p>
+            <span class="footericons2">
+                <a title="facebook logo" aria-label="Our facebook" href="https://www.facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
+                <a title="Instagram logo" aria-label="Our instagram" href="https://www.instagram.com"><i class="fa-brands fa-square-instagram"></i></a>
+                <a title="Linkedin logo" aria-label="Our linked in" href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+            </span>
         </footer>
     </div>
+    <!--Back to top button-->
+    <a href="#top" id="back-to-top" title="Back to the top of website" aria-label="Back to top">Back to top</a>
+    <!--Dette er script fra chat gpt for back to top button-->
+    <script>
+        var backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                backToTopButton.style.visibility = 'visible';
+                backToTopButton.style.opacity = '1';
+            } else {
+                backToTopButton.style.opacity = '0';
+                backToTopButton.style.visibility = 'hidden';
+            }
+        });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
